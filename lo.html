@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Locations - Nana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Body styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color:lightblue;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container styles */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        /* Section styles */
+        section {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Form styles */
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #f8f8f8;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="tel"]:focus {
+            background-color: #e0e0e0;
+            outline: none;
+        }
+
+        .check-link {
+            display: inline-block;
+            background-color: #ff3366;
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .check-link:hover {
+            background-color: #e6004d;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Navigation and other header content -->
+        <!-- ... -->
+    </header>
+
+    <div class="container">
+        <section>
+            <h1>Delivery Locations</h1>
+            <p>To check if we deliver to your specific location, please enter your address:</p>
+            <!-- Location input form -->
+            <form action="check_delivery.php" method="post">
+                <label for="country">Country:</label>
+                <input type="text" id="country" name="country" required>
+
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <a href="pay.html" class="check-link">Continue to order</a>
+            </form>
+            <p>If you have any questions regarding delivery or need assistance, feel free to <a href="contact.html">contact us</a>.</p>
+        </section>
+    </div>
+
+    <footer>
+        <!-- Your footer content -->
+        <!-- ... -->
+    </footer>
+</body>
+</html>
+
