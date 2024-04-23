@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nana - Your Organic Beauty Destination</title>
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-image: url('bc.jpg'); /* Water-like background image */
+            background-size: cover; /* Cover the entire background */
+            background-repeat: no-repeat; /* Do not repeat the background image */
+            min-height: 100vh; /* Set minimum height of body to full viewport height */
+            position: relative; /* Ensure correct positioning of footer */
+        }
+
+        /* Header styles */
+        header {
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background for header */
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        header nav ul {
+            list-style: none;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin-right: 1rem;
+        }
+
+        header nav ul li a {
+            color: #333; /* Dark text color */
+            text-decoration: none;
+        }
+
+        /* Hero section styles */
+        .hero {
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background for hero section */
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #333; /* Dark text color */
+            animation: slideIn 2s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #666; /* Light text color */
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #ff3366; /* Pink color for button */
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #e6004d; /* Darker pink color on hover */
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background for footer */
+            color: #333;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Help and Chat buttons */
+        .help-chat-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end; /* Align buttons to the right */
+            margin-right: 1rem; /* Add some margin to separate from other items */
+        }
+
+        .help-chat-buttons a {
+            background-color: #ff3366; /* Pink color for buttons */
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .help-chat-buttons a:hover {
+            background-color: #e6004d; /* Darker pink color on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Nana</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contacts.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="help-chat-buttons">
+                <a href="#">Help</a>
+                <a href="#">Chat Now</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Welcome to Nana - Your Organic Beauty Destination</h2>
+                <p>Indulge in nature's goodness with our exquisite collection of organic beauty products.</p>
+                <a href="shop.html" class="btn">Explore Now</a>
+            </div>
+        </section>
+
+        <!-- Other sections (e.g., featured products, categories) can be added here -->
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Nana. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

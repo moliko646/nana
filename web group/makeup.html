@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nana - Makeup</title>
+    <style>
+        /* Your existing CSS styles */
+           /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color:#008000; /* Soft background color */
+        }
+
+        /* Header styles */
+        header {
+            background-color: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        header nav ul {
+            list-style: none;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin-right: 1rem;
+        }
+
+        header nav ul li a {
+            color: #333; /* Dark text color */
+            text-decoration: none;
+        }
+
+        /* Product listing styles */
+        .product-list {
+            padding: 2rem 0;
+        }
+
+        .product {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            margin-bottom: 2rem;
+            position: relative; /* Added */
+        }
+
+        .product img {
+            max-width: 20%;
+            height: auto;
+            border-radius:5px;
+        }
+
+        .product h3 {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ff3366; /* Pink color for price */
+        }
+
+        .product button {
+            background-color: #ff3366; /* Pink color for button */
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .product button:hover {
+            background-color: #e6004d; /* Darker pink color on hover */
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #fff;
+            color: #333;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Message styles */
+        #cartMessage {
+            color: blue;
+            font-weight: bold;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 1rem;
+            border-radius: 5px;
+            display: none;
+        }
+
+        /* Quantity buttons */
+        .quantity-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity-buttons button {
+            background-color: #ccc;
+            color: #333;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 5px;
+        }
+
+        /* Help center and Chat now button */
+        .help-center {
+            background-color: #ff3366; /* Pink color for button */
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .help-center:hover {
+            background-color: #e6004d; /* Darker pink color on hover */
+        }
+
+        /* Space between buttons */
+        .help-center + .help-center {
+            margin-left: 10px;
+        }
+        
+
+        #placeOrderBtn:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
+        /* Place order button */
+        .place-order-btn {
+            background-color: #007bff; /* Blue color for button */
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            position: absolute;
+             margin-top: 1rem;
+            margin-left: 1rem;
+            right: 90;
+            top: 89%;
+            transform: translateY(-50%);
+        }
+
+        .place-order-btn:hover {
+            background-color: #0056b3; /* Darker blue color on hover */
+        }
+    </style>
+    <script>
+        // Function to display "Cart added successfully" message
+        function addToCart() {
+            var message = document.createElement("p");
+            message.textContent = "Item added to cart successfully!";
+            message.id = "cartMessage";
+            document.body.appendChild(message);
+            
+            // Show the message
+            message.style.display = "block";
+            
+            // Set timeout to remove the message after 3 seconds
+            setTimeout(function() {
+                message.style.display = "none";
+            }, 3000);
+        }
+
+        // Function to increment the quantity and update amount
+        function incrementQuantity(elementId, priceId, totalId) {
+            var quantityElement = document.getElementById(elementId);
+            var price = parseFloat(document.getElementById(priceId).innerText.replace('$', ''));
+            quantityElement.value++;
+            document.getElementById(totalId).innerText = '$' + (quantityElement.value * price).toFixed(2);
+        }
+
+        // Function to decrement the quantity and update amount
+        function decrementQuantity(elementId, priceId, totalId) {
+            var quantityElement = document.getElementById(elementId);
+            var price = parseFloat(document.getElementById(priceId).innerText.replace('$', ''));
+            if (quantityElement.value > 1) {
+                quantityElement.value--;
+                document.getElementById(totalId).innerText = '$' + (quantityElement.value * price).toFixed(2);
+            }
+        }
+
+       
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Nana</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contacts.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div>
+            <a href="help.html" class="help-center">Help Center</a>
+            <a href="chat.html" class="help-center">Chat Now</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="product-list">
+            <div class="container">
+                <h2>Makeup Products</h2>
+                <div class="product">
+                    <img src="1.webp" alt="Makeup Product 1">
+                    <h3>MISS ROSE MAKEUP</h3>
+                    <p>Face the day with a radiant look! A lightweight purely natural foundation for normal to dry skin. Delivering up to 12 hours of hydration, and with illuminating pigments, this new formula provides visibly more radiant skin.</p>
+                    <span class="price" id="price1">$19.99</span>
+                    <div class="quantity-buttons">
+                        <button onclick="decrementQuantity('quantity1', 'price1', 'total1')">-</button>
+                        <input type="text" id="quantity1" value="1" style="width: 30px; text-align: center;" readonly>
+                        <button onclick="incrementQuantity('quantity1', 'price1', 'total1')">+</button>
+                    </div>
+                    <span>Total: <span id="total1">$19.99</span></span>
+                    <button onclick="addToCart()">Add to Cart</button>
+                    <a href="ship.html" class="place-order-btn" onclick="placeOrder()">Place Your Order</a>
+                </div>
+                <div class="product">
+                    <img src="make2.jpg" alt="Makeup Product 2">
+                    <h3>FIERCE MAKEUP</h3>
+                    <p>Enhances natural features with a subtle, fresh look. Glam Makeup: Bold and dramatic, featuring smoky eyes and vibrant lips. Classic Makeup: Timeless and elegant, with neutral shades and defined features</p>
+                    <span class="price" id="price2">$24.99</span>
+                    <div class="quantity-buttons">
+                        <button onclick="decrementQuantity('quantity2', 'price2', 'total2')">-</button>
+                        <input type="text" id="quantity2" value="1" style="width: 30px; text-align: center;" readonly>
+                        <button onclick="incrementQuantity('quantity2', 'price2', 'total2')">+</button>
+                    </div>
+                    <span>Total: <span id="total2">$24.99</span></span>
+                    <button onclick="addToCart()">Add to Cart</button>
+                    <a href="ship.html" class="place-order-btn" onclick="placeOrder()">Place Your Order</a>
+                </div>
+                <!-- Add more makeup product listings here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Nana. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

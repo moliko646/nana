@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Shipping Method</title>
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-image: url('international.jpg');
+            background-color: #f9f9f9; /* Soft background color */
+            padding: 2rem;
+        }
+
+        /* Container styles */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: pink;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Title styles */
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        /* Shipping options container */
+        .shipping-options {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Shipping option styles */
+        .shipping-option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .shipping-option:last-child {
+            border-bottom: none;
+        }
+
+        /* Radio button styles */
+        input[type="radio"] {
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+
+        /* Submit button styles */
+        input[type="submit"] {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-top: 2rem;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Choose Shipping Method</h1>
+        <form action="#" method="post">
+            <div class="shipping-options">
+                <div class="shipping-option">
+                    <label>
+                        <input type="radio" name="shippingMethod" value="standard" checked>
+                        Standard Shipping - $5.99 (3-5 business days)
+                    </label>
+                </div>
+                <div class="shipping-option">
+                    <label>
+                        <input type="radio" name="shippingMethod" value="express">
+                        Express Shipping - $9.99 (1-2 business days)
+                    </label>
+                </div>
+                <div class="shipping-option">
+                    <label>
+                        <input type="radio" name="shippingMethod" value="nextDay">
+                        Next Day Delivery - $14.99 (next business day)
+                    </label>
+                </div>
+            </div>
+            <a href="lo.html" class="place-order-btn" onclick="placeOrder()">Place Your Order</a>
+        </form>
+    </div>
+</body>
+</html>

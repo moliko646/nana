@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nana - Payment Gateway</title>
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: grey; /* Soft background color */
+        }
+
+        /* Container styles */
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            padding: 2rem 0;
+            background-color: yellowgreen;
+        }
+
+        /* Form styles */
+        form {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 2px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="tel"],
+        form input[type="number"] {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form input[type="submit"] {
+            background-color: #ff3366; /* Pink color for button */
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #e6004d; /* Darker pink color on hover */
+        }
+        .place-order-btn {
+    background-color: #ff3366; /* Pink color for button */
+    color: #fff;
+    padding: 0.8rem 2rem; /* Increased padding for better appearance */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Ensure no underline for the link */
+    display: inline-block; /* Display as a block element */
+}
+
+.place-order-btn:hover {
+    background-color: #e6004d; /* Darker pink color on hover */
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Secure Payment Gateway</h1>
+        <form action="#" method="post">
+            <label for="card_number">Card Number</label>
+            <input type="text" id="card_number" name="card_number" required>
+
+            <label for="card_name">Cardholder Name</label>
+            <input type="text" id="card_name" name="card_name" required>
+
+            <label for="expiry_date">Expiry Date</label>
+            <input type="text" id="expiry_date" name="expiry_date" placeholder="MM/YYYY" required>
+
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" name="cvv" required>
+
+            <a href="pay now.html" class="place-order-btn" onclick="placeOrder()">PAY NOW</a>
+        </form>
+    </div>
+</body>
+</html>
