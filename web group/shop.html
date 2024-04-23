@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nana - Shop</title>
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9; /* Soft background color */
+            min-height: 100vh; /* Set minimum height of body to full viewport height */
+            position: relative; /* Ensure correct positioning of footer */
+        }
+
+        /* Header styles */
+        header {
+            background-color: #0000FF;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        header nav ul {
+            list-style: none;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin-right: 1rem;
+        }
+
+        header nav ul li a {
+            color: #333; /* Dark text color */
+            text-decoration: none;
+        }
+
+        /* Category links section */
+        .categories {
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .categories a {
+            display: inline-block;
+            background-color: #ff3366; /* Pink color for links */
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            margin: 0.5rem;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            position: relative; /* Add relative positioning */
+        }
+
+        .categories a:hover {
+            background-color: #e6004d; /* Darker pink color on hover */
+        }
+
+        /* Button images */
+        .button-img {
+            position: absolute;
+            top: calc(100% + 10px); /* Adjust distance from button to image */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .button-img img {
+            width: 100px; /* Adjust width of images */
+            height: auto;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #fff;
+            color: #333;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Help and Chat buttons */
+        .help-chat-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end; /* Align buttons to the right */
+            margin-right: 1rem; /* Add some margin to separate from other items */
+        }
+
+        .help-chat-buttons a {
+            background-color: #ff3366; /* Pink color for buttons */
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .help-chat-buttons a:hover {
+            background-color: #e6004d; /* Darker pink color on hover */
+        }
+
+        /* Spin animation */
+        @keyframes spin {
+            0%, 50% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .spin-text {
+            display: inline-block;
+            animation: spin 2s linear 2; /* Run animation twice */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Nana</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contacts.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="help-chat-buttons">
+                <a href="help.html">Help</a>
+                <a href="chat.html">Chat Now</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="categories">
+            <div class="container">
+                <h2><span class="spin-text">click the category you want to shop</span></h2>
+                <a href="makeup.html">Makeups
+                    <div class="button-img">
+                        <img src="m.jpg" alt="Makeup">
+                    </div>
+                </a>
+                <a href="hair care.html">Hair Care
+                    <div class="button-img">
+                        <img src="h.jpg" alt="Hair Care">
+                    </div>
+                </a>
+                <a href="body care.html">Body Care
+                    <div class="button-img">
+                        <img src="b.jpg" alt="Body Care">
+                    </div>
+                </a>
+                <a href="indu.html">Indulgent
+                    <div class="button-img">
+                        <img src="i.jpg" alt="Indulgent">
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Nana. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+

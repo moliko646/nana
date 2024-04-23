@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nana - Live Chat</title>
+    <style>
+        /* Your CSS styles for the chat page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .chat-box {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            overflow-y: auto;
+            max-height: 400px;
+        }
+        
+        .message {
+            margin-bottom: 10px;
+        }
+        
+        .message .sender {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .message .time {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .message .content {
+            margin-left: 20px;
+        }
+        
+        .input-box {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .input-box input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        
+        .input-box button {
+            padding: 10px 20px;
+            background-color: #ff3366;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="chat-box" id="chat-box">
+            <!-- Messages will be dynamically added here -->
+        </div>
+        <div class="input-box">
+            <input type="text" id="message-input" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for sending messages
+        function sendMessage() {
+            var messageInput = document.getElementById("message-input");
+            var message = messageInput.value.trim();
+            if (message !== "") {
+                var chatBox = document.getElementById("chat-box");
+                var newMessage = document.createElement("div");
+                newMessage.classList.add("message");
+                newMessage.innerHTML = `
+                    <span class="sender">You</span>
+                    <span class="time">${getCurrentTime()}</span>
+                    <div class="content">${message}</div>
+                `;
+                chatBox.appendChild(newMessage);
+                messageInput.value = "";
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }
+        }
+
+        function getCurrentTime() {
+            var now = new Date();
+            var hours = now.getHours().toString().padStart(2, "0");
+            var minutes = now.getMinutes().toString().padStart(2, "0");
+            return hours + ":" + minutes;
+        }
+    </script>
+</body>
+</html>
